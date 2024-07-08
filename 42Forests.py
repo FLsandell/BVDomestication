@@ -45,12 +45,6 @@ MedMARs_list = content.split("\n")
 del MedMARs_list[-1]
 MedMARs.close()
 
-# remove accessions only in Sabines Dataset
-
-sugs_full_list.remove("EL-A027158_")
-sugs_full_list.remove("ELA1401298_")
-
-
 #beets_snps = beets_snps.loc[MarMash_ACCs_list]
 Dom_Mar_list = sugs_full_list + MedMARs_list
 beets_snps = beets_snps.loc[Dom_Mar_list]
@@ -73,7 +67,7 @@ for seed in range(42):
     
     # train the model with 5000 Estimators
     
-    rf_fixed = RandomForestClassifier(max_depth=50, n_estimators = 1400, min_samples_split = 20, min_samples_leaf = 2, max_features = 'sqrt', bootstrap = True, n_jobs = 90)
+    rf_fixed = RandomForestClassifier(PARAMETERS)
     
     U =rf_fixed.fit(X_train, y_train)
     
@@ -102,5 +96,5 @@ for seed in range(42):
     feature_importance.columns = ['SNP','Importance']
     feature_importance = feature_importance[feature_importance['Importance'] > 0]
                             
-    feature_importance.to_csv("/project/cultibv/fwasch/MultiBeet/Domestication_42Forests/%s.csv" % seed, sep='\t')
+    feature_importance.to_csv("export_path" % seed, sep='\t')
 

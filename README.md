@@ -36,12 +36,9 @@ jupyter (optional, to view Colours_Quinoa_Code.ipynb)
 
 The following python modules:
 
-xgboost
-
 pandas
 
 numpy
-
 
 sklearn
 

@@ -64,7 +64,7 @@ Distributed under the MIT License.
 <!-- CONTACT -->
 ## Contact
 
-Felix Leopold Sandell - [@flwasch](https://twitter.com/flwasch) - felix.sandell@boku.ac.at
+Felix Leopold Sandell  felix.sandell@boku.ac.at
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

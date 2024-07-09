@@ -16,15 +16,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<Abstract after publication>
+Analysis of genomic variants using random forests. 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The code is available in three parts. The first script (RF.py) is examplary for how the models where trained. The second script (RF_input_iterations.py) is examplary for running the models with different train/test splits and the final script (windows.py) showcases how we summed up feature importances using sliding windows in order to identify signals. The code was designed to predict various traits based on sequencing data. The input file is a 0|1|2 matrix, where 0 denotes a homozygous reference position, 1 a heterozygous alternative position, and 2 a homozygous alternative position in the sugar beet reference assembly RefBeet-1.2.
+The code is available in three parts. The first script (RF.py) is examplary for how the models where trained. The second script (RF_input_iterations.py) is examplary for running the models with different train/test splits and the final script (windows.py) showcases how we summed up feature importances using sliding windows in order to identify signals. The code was designed to predict traits based on sequencing data. The input file is a 0|1|2 matrix generated from a VCF file using vcftools with the "--012" flag, where 0 denotes a homozygous reference position, 1 a heterozygous position, and 2 a homozygous alternative position.
 
-The code can readily be modified to construct a predictive model for any other trait that can be inferred from sequencing data. To generate a similar input matrix for new data, a VCF file can be converted by using vcftools with the "--012" flag.
+The code can readily be modified to construct a predictive model for any other trait that can be inferred from sequencing data.
 
 
 ### Prerequisites
@@ -44,7 +44,7 @@ matplotlib
 <!-- Information about our group -->
 ## About the ICB
 
-If you are interested in our work you can find more information [here](https://bvseq.boku.ac.at/) and on our [twitter](https://twitter.com/ICBboku).
+If you are interested in our work you can find more information [here](https://bvseq.boku.ac.at/) and on [X(twitter)](https://twitter.com/ICBboku).
 
 
 <!-- LICENSE -->

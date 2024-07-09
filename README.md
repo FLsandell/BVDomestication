@@ -17,8 +17,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Cultivated beets (Beta vulgaris) are important crops, and several studies explored genomic variation in the species. Here, we applied an advanced machine learning method, random forests, on published data and find genomic variants that distinguish wild beets from domesticated beets at an accuracy of 100%. The associated genes were involved in sugar accumulation and transport, nematode resistance, and root growth. Modern breeding lines provided by leading seed companies were recognised at an accuracy of 98.5% showing a strong signal associated with resistance to fungal infection. Wild beets from a narrow region in Italy had the same variation pattern pointing to the origin of this resistance trait. We successfully differentiated accessions by company revealing genes under selection. Analyses of admixture profiles addressed genomic history, provenance, and dispersal of wild beets. Our findings provide exciting possibilities for targeted breeding and show remarkable advances of variation analysis using machine learning.
-
+<Abstract after publication>
 
 
 <!-- GETTING STARTED -->

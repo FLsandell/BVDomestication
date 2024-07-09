@@ -8,7 +8,6 @@
 <h3 align="center">BetaVulgaris_RandomForests</h3>
 
   <p align="center">
-    Variation analysis employing machine learning reveals domestication patterns and breeding trends in sugar beet
     <br />
   </p>
 </div>
@@ -31,8 +30,6 @@ The code can readily be modified to construct a predictive model for any other t
 ### Prerequisites
 
 python3
-
-jupyter (optional, to view Colours_Quinoa_Code.ipynb)
 
 The following python modules:
 

@@ -22,7 +22,7 @@ Analysis of genomic variants using random forests.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-TThe code is available in three parts. The first script (RF.py) is examplary for how the models where trained. The second script (RF_input_iterations.py) is examplary for running the models with different train/test splits, and the final script (windows.py) showcases how feature importances were summarized using sliding windows. The code was designed to determine genetic regions that are decisive for separating two phenotypic groups  based on sequencing data. The input file is a 0|1|2 matrix generated from a VCF file using vcftools with the "--012" flag, where 0 denotes a homozygous reference position, 1 a heterozygous position, and 2 a homozygous alternative position.
+TThe code is available in three parts. The first script (RF.py) is examplary for how the models where trained. The second script (RF_input_iterations.py) is examplary for running the models with different train/test splits, and the final script (windows.py) showcases how feature importances were summarized using sliding windows. The code was designed to determine genetic regions that are decisive for separating two phenotypic groups based on variant calls.. The input file is a 0|1|2 matrix generated from a VCF file using vcftools with the "--012" flag, where 0 denotes a homozygous reference position, 1 a heterozygous position, and 2 a homozygous alternative position.
 
 The code can readily be modified to construct models that distinguish any two groups of phenotypes as long as their differentiation can be inferred from genomic variants.
 

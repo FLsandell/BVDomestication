@@ -1,5 +1,5 @@
-# Random Forest script for the publication: Variation analysis employing machine learning reveals domestication patterns and breeding trends in sugar beet
-# this code is only a demonstration of the concept and not ready to use. This has to be adapted by adding input files of choice, output paths. Parameter ranges for hyperparameter optimization have to be selected with proper caution and have to be adapted depending on the input data set. 
+# Calculates trained models with different train/test splits
+# Code lines to be adapted are marked with e.g. "# insert path to input file".
 # (c) Felix Sandell
 # 1.7.2024
 
@@ -16,25 +16,27 @@ from pandas import DataFrame
 
 
 # read file
-beets_snps = pd.read_csv('INPUTFILE',  sep = " ")
+beets_snps = pd.read_csv('# insert path to input file',  sep = " ")
 
 # Set index
-beets_snps = beets_snps.set_index('ACC')
+beets_snps = beets_snps.set_index('# insert column name of phenotypes')
 # .T
 beets_snps = beets_snps.T
+
+# reduces file size to save memory
 
 beets_snps = beets_snps.astype('int8')
 
 # creates lists for groups (example BETA_MARITIMA, SUGAR BEET)
 # MARs
-MARs = open("PATH_TO_ACESSION_LIST", "r")
+MARs = open("# insert path to accession list", "r")
 content = MARs.read()
 MARs_list = content.split("\n")
 del MARs_list[-1]
 MARs.close()
 
 # SUGs
-SUGs = open("PATH_TO_ACESSION_LIST", "r")
+SUGs = open("# insert path to accession list", "r")
 content = SUGs.read()
 SUGs_list = content.split("\n")
 del SUGs_list[-1]
@@ -92,4 +94,4 @@ for seed in range(42):
     feature_importance.columns = ['SNP','Importance']
     feature_importance = feature_importance[feature_importance['Importance'] > 0]
                             
-    feature_importance.to_csv("export_path" % seed, sep='\t')
+    feature_importance.to_csv("# insert path to output" % seed, sep='\t')

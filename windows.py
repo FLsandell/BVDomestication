@@ -1,5 +1,5 @@
-# sliding window script for the publication: Variation analysis employing machine learning reveals domestication patterns and breeding trends in sugar beet
-# this code is only a demonstration of the concept and not ready to use. This has to be adapted by adding input files of choice, output paths etc,
+# Summs up feature importances along the chromosomes using a sliding window in order to determine genetic regions of interest. 
+# Code lines to be adapted are marked with e.g. "# insert path to input file".
 # (c) Felix Sandell
 # 1.7.2024
 
@@ -9,10 +9,12 @@ import numpy as np
 
 # import file
 
-chr_lengths = pd.read_csv('input file', sep = '\t')
-df = pd.read_csv('input file', sep = '\t')
+chr_lengths = pd.read_csv('# insert path to input file', sep = '\t')
+df = pd.read_csv('# insert path to input file', sep = '\t')
 
 # remove unasigned scaffolds
+# in our case they where names as "un" chromosomes. If the assembly is chromosome scale, simply skip this step
+
 df = df[~df['Scaffold'].str.contains('un')]
 chr_lengths = chr_lengths[~chr_lengths['Sca'].str.contains('un')]
 
@@ -38,22 +40,22 @@ def sliding_window_counts(sca_length, window_size, step_size, scaffold):
         sliding_list.extend(counts_list)
     return sliding_list
 
-# iterate through all scaffolds on chr6 and plot the sliding window
+# iterate through all and plot the sliding window
 sig_windows = pd.DataFrame()
 
 for index, row in chr_lengths.iterrows(): 
     print(row['Sca'])
     sliding_list_feats = sliding_window_feats(row['length'], 5000, 2500, row['Sca'])
     
-    df_test = pd.DataFrame()
+    df = pd.DataFrame()
 
-    df_test['chr'] = row['Sca']
-    df_test['feats'] = sliding_list_feats
-    df_test['loc'] = range(1,row['length'],2500)
-    #q = df_test['feats'].quantile(0.99)
+    df['chr'] = row['Sca']
+    df['feats'] = sliding_list_feats
+    df['loc'] = range(1,row['length'],2500)
+    #q = df['feats'].quantile(0.99)
     #print(q)
-    #df_test.loc[(df_test['feats'] >= 0.01)]
-    #sig_windows = sig_windows.append(df_test, ignore_index=True)
+    #df.loc[(df['feats'] >= 0.01)]
+    #sig_windows = sig_windows.append(df, ignore_index=True)
     
     
     plt_1 = plt.figure(figsize=(15, 5))
